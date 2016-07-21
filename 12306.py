@@ -15,9 +15,9 @@ def email():
         return formataddr((Header(name, 'utf-8').encode(), addr))
 
     checi()
-    from_addr = '597827051@qq.com'
-    password = 'shmuavhzsdgobbdg'
-    smtp_server = 'smtp.qq.com'
+    from_addr = ''  #发送邮箱
+    password = ''  #接收邮箱
+    smtp_server = 'smtp.qq.com' #服务器
 
     # 普通列车
     msg = MIMEText(che_num + '次列车还有， '+checi()[0]+' 张无座车票，'+checi()[1]+' 张硬座车票，'+checi()[2]+' 张硬卧车票，'+checi()[3]+' 张软卧车票。'+'\n'
@@ -39,7 +39,7 @@ def email():
     msg1['To'] = _format_addr('亲爱的 <%s>' % to_addr)
     msg1['Subject'] = Header(che_num + '次列车24小时监控', 'utf-8').encode()
 
-    server = smtplib.SMTP_SSL(smtp_server, 465)
+    server = smtplib.SMTP_SSL(smtp_server, 465)  #smtp模式和接口
     server.set_debuglevel(1)
     server.login(from_addr, password)
     if che_num[0] == 'G' or che_num[0] == 'D':

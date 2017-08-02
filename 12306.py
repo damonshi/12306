@@ -16,7 +16,7 @@ def email():
 
     checi()
     from_addr = ''  #发送邮箱
-    password = ''  #接收邮箱
+    password = ''  #邮箱密码
     smtp_server = 'smtp.qq.com' #服务器
 
     # 普通列车
